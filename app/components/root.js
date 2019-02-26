@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Root = () => {
+  console.log('made it to root component')
   return (
     <div>
       <nav>
