@@ -1,7 +1,8 @@
 'use strict'
 
 const db = require('./database')
-
+const Category = require('./models/Categories')
+const Book = require('./models/Books')
 // The purpose of this module is to bring your Sequelize instance (`db`) together
 // with your models (which you should define in separate modules in this directory).
 // Example:
@@ -17,5 +18,7 @@ const db = require('./database')
 
 module.exports = {
   // Include your models in this exports object as well!
+  Category,
+  Book,
   db
 }
