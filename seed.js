@@ -28,7 +28,33 @@ const books = [
     AuthorEmail: 'xyz@mail.com',
     Edition: 1,
     categoryId: 1
-
+  },
+  {
+    Name: 'Cbe',
+    AuthorName: 'lmn',
+    AuthorEmail: 'lmn@mail.com',
+    Edition: 3,
+    categoryId: 2
+  },
+  {
+    Name: 'BLR',
+    AuthorName: 'ap',
+    AuthorEmail: 'ap@mail.com',
+    Edition: 1,
+    categoryId: 3
+  },
+  {
+    Name: 'Hyd',
+    AuthorName: 'kar',
+    AuthorEmail: 'kar@mail.com',
+    Edition: 1,
+    categoryId: 1
+  }, {
+    Name: 'Chec',
+    AuthorName: 'Tmn',
+    AuthorEmail: 'tmn@mail.com',
+    Edition: 2,
+    categoryId: 3
   }
 ]
 const seed = async () => {
