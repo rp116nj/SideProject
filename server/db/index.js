@@ -16,6 +16,9 @@ const Book = require('./models/Books')
 //
 // Puppy.belongsTo(Owner)
 
+Book.belongsTo(Category)
+Category.hasMany(Book)
+
 module.exports = {
   // Include your models in this exports object as well!
   Category,
