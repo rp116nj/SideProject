@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from './NavBar'
 
 const Root = () => {
   console.log('made it to root component')
@@ -6,6 +7,7 @@ const Root = () => {
     <div>
       <nav>
         Welcome!
+        {/* <Navbar /> */}
       </nav>
       <main>
         <h1> This is my Library </h1>
