@@ -26,7 +26,7 @@ module.exports = db.define('book', {
   },
   imageUrl: {
     type: Sequelize.STRING,
-    defaultValue: 'https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiy_v7HsdrgAhVKm-AKHRLoACkQjRx6BAgBEAU&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMickey_Mouse&psig=AOvVaw3fmkmuKOHmO7XDCaGpm3Vr&ust=1551304448355876'
+    defaultValue: ''
   },
   Edition: {
     type: Sequelize.DECIMAL,

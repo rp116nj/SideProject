@@ -26,3 +26,12 @@ main {
   flex-direction: column;
   justify-content: center;
 }
+#navbar {
+  
+}
+a {
+  color: white;
+}
+img {
+  height: 50px;
+}

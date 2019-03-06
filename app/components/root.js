@@ -1,26 +1,28 @@
-import React from 'react'
-import Navbar from './NavBar'
-import { BrowserRouter, Route, Switch} from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import AllCategories from './AllCategories';
+import Navbar from './NavBar';
+import AllBooks from './AllBooks'
 
 const Root = () => {
   return (
-    <div>
-      <nav>
-        Welcome!
-        <Navbar />
-      </nav>
-      <main>
-        <h1> This is my Library </h1>
-        <p> Lets start with some Routes </p>
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" />
-            <Route exact path="/categories" component={AllCategories} />
-          </Switch>
-        </BrowserRouter>
-      </main>
-    </div>
+    <BrowserRouter>
+      <div>
+        <nav>
+          Welcome!
+          <Navbar />
+        </nav>
+        <main>
+          <h1> This is my Library </h1>
+          <p> Lets start with some Routes </p>
+            <Switch>
+              <Route exact path="/" />
+              <Route exact path="/categories" component={AllCategories} />
+              <Route exact path="/books" component={AllBooks} />
+            </Switch>
+        </main>
+      </div>
+    </BrowserRouter>
   )
 }
 

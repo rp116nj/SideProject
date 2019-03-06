@@ -1,17 +1,35 @@
-const initialState = {
-  categories: []
-};
+import axios from 'axios'
+
+const initialCategories = []
+  
 // Action Type
-const gotAllCategories = 'GET_ALL_CATEGORIES'
- 
+//const gotAllCategories = 'GET_ALL_CATEGORIES'
+
 //Action Creator
 export const getAllCategories = (categories) => ({
-  type: getAllCategories,
+  type: 'GET_ALL_CATEGORIES',
   categories
 })
-export const categoryReducer = (state = initialState, action) => {
+
+//Thunks
+export const getCategories = () => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get('/api/categories')
+      const categories = response.data
+      console.log('in thunk', categories)
+      dispatch(getAllCategories(categories))
+    }
+    catch (err) {
+      throw (err)
+    }
+  }
+}
+
+export const categoryReducer = (state = initialCategories, action) => {
   switch (action.type) {
-    case gotAllCategories:
+    case 'GET_ALL_CATEGORIES':
+      console.log('in reducer', action.categories)
       return {...state, categories: action.categories}
     default:
       return state;
