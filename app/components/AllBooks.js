@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getBooks } from '../reducers/bookReducer'
+import { getBooks } from '../reducers/bookReducer';
 export class AllBooks extends Component {
   componentDidMount() {
-    this.props.getBooks()
+    this.props.getBooks();
   }
   render() {
-    console.log('props', this.props)
+    console.log('props', this.props);
     const books = this.props.books;
     console.log('in component', books);
     return books.map(book => {
@@ -15,7 +15,7 @@ export class AllBooks extends Component {
         <div key={book.id}>
           <Link to={'/books/${book.id'}>{book.name}</Link>
           <p>Author's Name : {book.authorName}</p>
-          <img src= {book.imageurl} />
+          <img src={book.imageurl} />
         </div>
       );
     });
@@ -26,13 +26,18 @@ const mapStateToProps = state => {
   console.log('state', state);
   return {
     books: state.book.books,
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
-    getBooks: () => { dispatch(getBooks()) }
-  }
-}
+    getBooks: () => {
+      dispatch(getBooks());
+    },
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(AllBooks);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AllBooks);
