@@ -2,21 +2,21 @@ const Sequelize = require('sequelize')
 const db = require('../database')
 
 module.exports = db.define('book', {
-  Name: {
+  name: {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {
       notEmpty: true
     }
   },
-  AuthorName: {
+  authorName: {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {
       notEmpty: true
     }
   },
-  AuthorEmail: {
+  authorEmail: {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {
@@ -28,7 +28,7 @@ module.exports = db.define('book', {
     type: Sequelize.STRING,
     defaultValue: ''
   },
-  Edition: {
+  edition: {
     type: Sequelize.DECIMAL,
     validate: {
       min: 0.0,

@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const categories = require('../db/models/Categories')
+const books = require('../db/models/Books');
 
 //GET all categories ('/api/categories')
 
@@ -15,8 +16,15 @@ router.get('/', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
   try {
+    //console.log('id param', req.params.id)
     const category = await categories.findByPk(req.params.id)
-    res.json(category)
+    const allBooksInCategory = await books.findAll({
+      where: {
+        categoryId: req.params.id
+      }
+    })
+    //console.log('allBooks', allBooksInCategory)
+    res.json({ category, allBooksInCategory})
   }
   catch (error) {
     next(error)

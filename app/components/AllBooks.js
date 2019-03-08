@@ -13,8 +13,8 @@ export class AllBooks extends Component {
     return books.map(book => {
       return (
         <div key={book.id}>
-          <Link to={'/books/${book.id'}>{book.Name}</Link>
-          <p>Author's Name : {book.AuthorName}</p>
+          <Link to={'/books/${book.id'}>{book.name}</Link>
+          <p>Author's Name : {book.authorName}</p>
           <img src= {book.imageurl} />
         </div>
       );

@@ -15,8 +15,8 @@ export class AllCategories extends Component {
     return categories.map(category => {
       return (
         <div key={category.id}>
-          <Link to={'/categories/${category.id'}>{category.Name}</Link>
-          <p>Description: {category.Description}</p>
+          <Link to={`/categories/${category.id}`}>{category.name}</Link>
+          <p>Description: {category.description}</p>
           <img src= {category.imageUrl} />
         </div>
       );
