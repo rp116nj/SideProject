@@ -1,7 +1,8 @@
 import axios from 'axios'
-const initialBooks = []
-  
-
+const initialState = {
+  books: [],
+  selectedBook: {}
+}
 // Action Type
 //const gotAllBooks = 'GET_ALL_BOOKS'
 
@@ -25,10 +26,10 @@ export const getBooks = () => {
     }
   }
 }
-export const bookReducer = (state = initialBooks, action) => {
+export const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_ALL_BOOKS':
-      return  action.books
+      return { ...state, books: action.books }
     default:
       return state;
   }

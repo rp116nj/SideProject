@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import AllCategories from './AllCategories';
 import Navbar from './NavBar';
 import AllBooks from './AllBooks'
+import SingleCategory from './SingleCategory';
 
 const Root = () => {
   return (
@@ -19,6 +20,7 @@ const Root = () => {
               <Route exact path="/" />
               <Route exact path="/categories" component={AllCategories} />
               <Route exact path="/books" component={AllBooks} />
+              <Route exact path="/categories/:id" component={SingleCategory} />
             </Switch>
         </main>
       </div>

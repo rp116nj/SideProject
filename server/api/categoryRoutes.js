@@ -13,4 +13,14 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+router.get('/:id', async (req, res, next) => {
+  try {
+    const category = await categories.findByPk(req.params.id)
+    res.json(category)
+  }
+  catch (error) {
+    next(error)
+  }
+})
+
 module.exports = router

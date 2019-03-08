@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { getBooks } from '../reducers/bookReducer'
 export class AllBooks extends Component {
   componentDidMount() {
-    console.log('fjghdfj')
     this.props.getBooks()
   }
   render() {
@@ -26,7 +25,7 @@ export class AllBooks extends Component {
 const mapStateToProps = state => {
   console.log('state', state);
   return {
-    books: state.book,
+    books: state.book.books,
   }
 }
 

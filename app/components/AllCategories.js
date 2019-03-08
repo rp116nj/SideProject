@@ -11,7 +11,7 @@ export class AllCategories extends Component {
   render() {
     console.log('props', this.props)
     const categories = this.props.categories;
-    console.log('in component', categories);
+     console.log('in component', categories);
     return categories.map(category => {
       return (
         <div key={category.id}>
@@ -25,9 +25,10 @@ export class AllCategories extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('state', state);
+  //console.log('state', state);
+  console.log('state', state.category.categories)
   return {
-    categories: state.category,
+   categories: state.category.categories,
   }
 }
 
