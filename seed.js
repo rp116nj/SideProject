@@ -6,54 +6,54 @@ const Book = require('./server/db/models/Books')
 
 const categories = [
   {
-  Name: 'Fiction',
-  Location: 'Aisle 1',
-  Description: 'Fiction is a literary genre in which the plot takes place in an imaginary setting .It can also be applied to other types of narrative, including theatre, opera, cinema and television, as well as video games and graphic novels.'
+  name: 'Fiction',
+  location: 'Aisle 1',
+  description: 'Fiction is a literary genre in which the plot takes place in an imaginary setting .It can also be applied to other types of narrative, including theatre, opera, cinema and television, as well as video games and graphic novels.'
   },
   {
-    Name: 'Drama',
-    Location: 'Aisle 2',
-    Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates necessitatibus voluptatibus fugit incidunt ratione ullam natus quam temporibus beatae, distinctio perferendis, tenetur facere officia minus eaque excepturi aliquid, neque nam!'
+    name: 'Drama',
+    location: 'Aisle 2',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates necessitatibus voluptatibus fugit incidunt ratione ullam natus quam temporibus beatae, distinctio perferendis, tenetur facere officia minus eaque excepturi aliquid, neque nam!'
   },
   {
-    Name: 'Thriller',
-    Location: 'Aisle 3',
-    Description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ratione fuga iusto optio, maxime odio praesentium architecto illum molestias, vitae sunt officia ad excepturi placeat inventore facere culpa? Distinctio, excepturi.'
+    name: 'Thriller',
+    location: 'Aisle 3',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ratione fuga iusto optio, maxime odio praesentium architecto illum molestias, vitae sunt officia ad excepturi placeat inventore facere culpa? Distinctio, excepturi.'
   }
 ]
 const books = [
   {
-    Name: 'Abc',
-    AuthorName: 'xyz',
-    AuthorEmail: 'xyz@mail.com',
-    Edition: 1,
+    name: 'Abc',
+    authorName: 'xyz',
+    authorEmail: 'xyz@mail.com',
+    edition: 1,
     categoryId: 1
   },
   {
-    Name: 'Cbe',
-    AuthorName: 'lmn',
-    AuthorEmail: 'lmn@mail.com',
-    Edition: 3,
+    name: 'Cbe',
+    authorName: 'lmn',
+    authorEmail: 'lmn@mail.com',
+    edition: 3,
     categoryId: 2
   },
   {
-    Name: 'BLR',
-    AuthorName: 'ap',
-    AuthorEmail: 'ap@mail.com',
-    Edition: 1,
+    name: 'BLR',
+    authorName: 'ap',
+    authorEmail: 'ap@mail.com',
+    edition: 1,
     categoryId: 3
   },
   {
-    Name: 'Hyd',
-    AuthorName: 'kar',
-    AuthorEmail: 'kar@mail.com',
-    Edition: 1,
+    name: 'Hyd',
+    authorName: 'kar',
+    authorEmail: 'kar@mail.com',
+    edition: 1,
     categoryId: 1
   }, {
-    Name: 'Chec',
-    AuthorName: 'Tmn',
-    AuthorEmail: 'tmn@mail.com',
-    Edition: 2,
+    name: 'Chec',
+    authorName: 'Tmn',
+    authorEmail: 'tmn@mail.com',
+    edition: 2,
     categoryId: 3
   }
 ]

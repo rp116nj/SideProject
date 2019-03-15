@@ -1,12 +1,12 @@
 const router = require('express').Router()
-const categories = require('../db/models/Categories')
-const books = require('../db/models/Books');
+const Categories = require('../db/models/Categories')
+const Books = require('../db/models/Books');
 
 //GET all categories ('/api/categories')
 
 router.get('/', async (req, res, next) => {
   try {
-    const allCategories = await categories.findAll()
+    const allCategories = await Categories.findAll()
     res.json(allCategories)
   }
   catch (error) {
@@ -17,8 +17,8 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     //console.log('id param', req.params.id)
-    const category = await categories.findByPk(req.params.id)
-    const allBooksInCategory = await books.findAll({
+    const category = await Categories.findByPk(req.params.id)
+    const allBooksInCategory = await Books.findAll({
       where: {
         categoryId: req.params.id
       }
@@ -31,4 +31,15 @@ router.get('/:id', async (req, res, next) => {
   }
 })
 
+router.post('/', async (req, res, next) => {
+  try {
+    console.log('request body', req.body)
+    //const [categoryInstance, wasCreated] = await categories.findOrCreate(req.body)
+    const newCategory = await Categories.create(req.body)
+    //res.json(categoryInstance)
+    res.json(newCategory)
+  } catch (error) {
+    next(error);
+  }
+})
 module.exports = router
