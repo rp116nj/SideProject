@@ -6,7 +6,11 @@ const Books = require('../db/models/Books');
 
 router.get('/', async (req, res, next) => {
   try {
-    const allCategories = await Categories.findAll()
+    const allCategories = await Categories.findAll({
+      order: [
+          ['id', 'ASC']
+        ]
+    })
     res.json(allCategories)
   }
   catch (error) {

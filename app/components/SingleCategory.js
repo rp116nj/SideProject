@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export class SingleCategory extends Component {
   componentDidMount() {
-    this.props.getCategory();
+    this.props.getCategory()
   }
   render() {
     console.log('props', this.props);
@@ -37,7 +37,7 @@ export class SingleCategory extends Component {
 const mapStateToProps = state => {
   console.log('state', state);
   return {
-    category: state.category.selectedCategory,
+    category: state.category.selectedCategory
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {

@@ -7,12 +7,16 @@ const Op = require('sequelize').Op
 
 router.get('/', async (req, res, next) => {
   try {
-    const allBooks = await Books.findAll();
+    const allBooks = await Books.findAll({
+      order: [
+        ['id', 'ASC']
+      ]
+    });
     res.json(allBooks);
   } catch (error) {
     next(error);
   }
-});
+})
 
 router.get('/:id', async (req, res, next) => {
   try {
@@ -20,13 +24,20 @@ router.get('/:id', async (req, res, next) => {
     const book = await Books.findByPk(req.params.id, {
       include: [{
         model: Categories,
-        //do the eager loading
       }]
     });
     res.json(book);
   } catch (error) {
     next(error);
   }
-});
+})
 
+router.post('/', async (req, res, next) => {
+  try {
+    const newBook = await Books.create(req.body)
+    res.json(newBook)
+  } catch (error) {
+    next(error);
+  }
+})
 module.exports = router;

@@ -4,7 +4,7 @@ import AllCategories from './AllCategories';
 import Navbar from './NavBar';
 import AllBooks from './AllBooks'
 import SingleCategory from './SingleCategory';
-//import SingleBook from './SingleBook'
+import SingleBook from './SingleBook'
 
 const Root = () => {
   return (
@@ -21,8 +21,8 @@ const Root = () => {
               <Route exact path="/" />
               <Route exact path="/categories" component={AllCategories} />
               <Route exact path="/books" component={AllBooks} />
-            <Route exact path="/categories/:id" component={SingleCategory} />
-            {/* <Route exact path="/books/:id" component={SingleBook} /> */}
+              <Route exact path="/categories/:id" component={SingleCategory} />
+              <Route exact path="/books/:id" component={SingleBook} />
             </Switch>
         </main>
       </div>
