@@ -12,7 +12,7 @@ export class AllBooks extends Component {
     console.log('in component', books);
     return books.map(book => {
       return (
-        <div key={book.id}>
+        <div key={book.id} className="book-container">
           <Link to={`/books/${book.id}`}>{book.name}</Link>
           <p>Author's Name : {book.authorName}</p>
           <img src={book.imageurl} />

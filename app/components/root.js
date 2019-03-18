@@ -17,6 +17,7 @@ const Root = () => {
         <main>
           <h1> This is my Library </h1>
           <p> Lets start with some Routes </p>
+          <div className="main-container">
             <Switch>
               <Route exact path="/" />
               <Route exact path="/categories" component={AllCategories} />
@@ -24,6 +25,7 @@ const Root = () => {
               <Route exact path="/categories/:id" component={SingleCategory} />
               <Route exact path="/books/:id" component={SingleBook} />
             </Switch>
+          </div>
         </main>
       </div>
     </BrowserRouter>
