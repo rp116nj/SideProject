@@ -15,7 +15,10 @@ export const getSingleCategory = category => ({
   type: 'GET_SINGLE_CATEGORY',
   category
 })
-
+export const createCategories = category => ({
+  type: 'CREATE_CATEGORY',
+  category
+})
 //Thunks
 export const getCategories = () => {
   return async dispatch => {
@@ -41,6 +44,18 @@ export const getCategory = id => {
       throw err
     }
   }
+}
+
+export const createNewCategory = category => {
+  return async dispatch => {
+    try {
+      const response = await axios.post(`/api/categories`, category)
+      console.log(response)
+    } catch (err) {
+      throw err;
+    }
+  }
+
 }
 export const categoryReducer = (state = initialState, action) => {
   switch (action.type) {

@@ -5,6 +5,7 @@ import Navbar from './NavBar';
 import AllBooks from './AllBooks'
 import SingleCategory from './SingleCategory';
 import SingleBook from './SingleBook'
+import AddCategory from './AddCategory';
 
 const Root = () => {
   return (
@@ -24,6 +25,7 @@ const Root = () => {
               <Route exact path="/books" component={AllBooks} />
               <Route exact path="/categories/:id" component={SingleCategory} />
               <Route exact path="/books/:id" component={SingleBook} />
+              <Route exact path="/categories/addCategory" component={AddCategory} />
             </Switch>
           </div>
         </main>
