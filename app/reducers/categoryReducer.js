@@ -51,6 +51,7 @@ export const createNewCategory = category => {
     try {
       const response = await axios.post(`/api/categories`, category)
       console.log(response)
+      dispatch(createCategories(category))
     } catch (err) {
       throw err;
     }

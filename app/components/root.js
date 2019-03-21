@@ -23,9 +23,9 @@ const Root = () => {
               <Route exact path="/" />
               <Route exact path="/categories" component={AllCategories} />
               <Route exact path="/books" component={AllBooks} />
+              <Route exact path="/categories/addCategory" component={AddCategory} />
               <Route exact path="/categories/:id" component={SingleCategory} />
               <Route exact path="/books/:id" component={SingleBook} />
-              <Route exact path="/categories/addCategory" component={AddCategory} />
             </Switch>
           </div>
         </main>

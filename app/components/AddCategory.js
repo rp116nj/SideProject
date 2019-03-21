@@ -13,6 +13,7 @@ class CategoryForm extends Component {
     this.handleNameChange = this.handleNameChange.bind(this)
     this.handleLocationChange = this.handleLocationChange.bind(this)
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleNameChange(event) {
