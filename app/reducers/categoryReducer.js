@@ -84,6 +84,8 @@ export const categoryReducer = (state = initialState, action) => {
       return { ...state, categories: action.categories };
     case 'GET_SINGLE_CATEGORY':
       return { ...state, selectedCategory: action.category };
+    case 'CREATE_CATEGORY':
+      return {...state, categories: [...state.categories, action.category]}
     case 'DELETE_CATEGORY':
       return {...state, categories: state.categories.filter(category => category.id !== action.id) }
     default:

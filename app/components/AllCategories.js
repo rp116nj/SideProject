@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getCategories, deleteACategory  } from '../reducers/categoryReducer';
+import { getCategories, deleteACategory , createNewCategory } from '../reducers/categoryReducer';
 export class AllCategories extends Component {
   // constructor(props) {
   //   super(props)
@@ -47,6 +47,9 @@ const mapDispatchToProps = dispatch => {
   return {
     getCategories: () => {
       dispatch(getCategories());
+    },
+    createNewCategory: (category) => {
+      dispatch(createNewCategory(category))
     },
     deleteACategory: (id) => {
       dispatch(deleteACategory(id))
