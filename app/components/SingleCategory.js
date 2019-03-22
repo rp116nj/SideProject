@@ -15,9 +15,9 @@ export class SingleCategory extends Component {
       category ?
         <div>
           <div>
-            <h3>{category.name}</h3>
-            <h4>{category.location}</h4>
-            <p>{category.description}</p>
+            <h3>Name:{category.name}</h3>
+            <h4>Location:{category.location}</h4>
+            <p>Description:{category.description}</p>
           </div>
           <div>
             {booksInCategory.map(book => {

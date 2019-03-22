@@ -7,6 +7,9 @@ export class AllCategories extends Component {
   componentDidMount() {
     this.props.getCategories();
   }
+  // handleClick() => {
+  
+  // }
   render() {
     console.log('props', this.props);
     const categories = this.props.categories;
@@ -17,6 +20,9 @@ export class AllCategories extends Component {
           <Link to={`/categories/${category.id}`}>{category.name}</Link>
           <p>Description: {category.description}</p>
           <img src={category.imageUrl} />
+          <div>
+            <button type="button" value={category.id} onClick={this.handleClick}>Delete</button>
+          </div>
         </div>
       );
     });

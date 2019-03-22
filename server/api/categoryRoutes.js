@@ -46,4 +46,11 @@ router.post('/', async (req, res, next) => {
     next(error);
   }
 })
+router.delete('/:id', async (req, res, next) => {
+  try {
+    await Categories.destroy(req.params.id)
+  } catch (error) {
+    next(error);
+  }
+})
 module.exports = router
