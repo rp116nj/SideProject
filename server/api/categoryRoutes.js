@@ -48,7 +48,13 @@ router.post('/', async (req, res, next) => {
 })
 router.delete('/:id', async (req, res, next) => {
   try {
-    await Categories.destroy(req.params.id)
+    await Categories.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    res.sendStatus(204)
+    //const categories = await Categories.findAll()
   } catch (error) {
     next(error);
   }

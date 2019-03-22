@@ -19,6 +19,10 @@ export const createCategories = category => ({
   type: 'CREATE_CATEGORY',
   category
 })
+export const deleteCategory = id => ({
+  type: 'DELETE_CATEGORY',
+  id,
+});
 //Thunks
 export const getCategories = () => {
   return async dispatch => {
@@ -58,6 +62,21 @@ export const createNewCategory = category => {
   }
 
 }
+
+export const deleteACategory = (id) => {
+  return async dispatch => {
+    try {
+      const response = await axios.delete(`/api/categories/${id}`)
+      const data = response.data
+      console.log('data', data)
+      console.log('in thunk', deleteACategory)
+      dispatch(deleteCategory(id))
+    }
+    catch (err) {
+      throw err
+    }
+  }
+}
 export const categoryReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_ALL_CATEGORIES':
@@ -65,6 +84,8 @@ export const categoryReducer = (state = initialState, action) => {
       return { ...state, categories: action.categories };
     case 'GET_SINGLE_CATEGORY':
       return { ...state, selectedCategory: action.category };
+    case 'DELETE_CATEGORY':
+      return {...state, categories: state.categories.filter(category => category.id !== action.id) }
     default:
       return state;
   }

@@ -3,12 +3,12 @@
 
 import { combineReducers } from 'redux'
 import { categoryReducer } from './categoryReducer'
-import { bookReducer} from './bookReducer'
+import { bookReducer } from './bookReducer'
 
 const rootReducer = combineReducers({
   category: categoryReducer,
-  book: bookReducer
-})
+  book: bookReducer,
+  })
 // const initialState = {};
 
 // const rootReducer = (state = initialState, action) => {
